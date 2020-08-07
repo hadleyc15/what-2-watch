@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What 2 Watch</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css"> 
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container-fluid px-0">
+            <header>
+                <nav>
+                    <div class="row text-center">
+                        <div class="col-2">
+                            <a href="/" class= "pl-3">Home</a>
+                        </div>
+                        {{#if loggedIn}}
+                        <div class="col-2">
+                            <a class='pl-3' href="/dashboard">Dashboard</a>
+                        </div>
+                        <div class="col-2">
+                            <button id="logout" class="pl-3">Logout</button>
+                        </div>
+                        {{else}}
+                        <div class="col-2">
+                            <a class='pl-3' href="/login">Login</a>
+                        </div>
+                        {{/if}}
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-center">
+                        <h1 class='page-header px-3 py-1'>What 2 Watch</h1>
+                        </div>
+                    </div>
+
+                </nav>
+            </header>
+        </div>
+        <main>
+            {{{ body }}}
+        </main>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>
