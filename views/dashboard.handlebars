@@ -1,31 +1,44 @@
-<section class='post-section'>
-    <h2>Suggest something to watch this week!</h2>
+<section>
+  <h2>Suggest a Show for the week!</h2>
 
-    <form class="new-post-form">
-        <div>
-            <label for="post-title">Show Title</label>
-            <input type="text" id="post-title" name="post-title" />
-        </div>
-        <div>
-            <label for="post-body">Content</label>
-            <textarea id="post-body" name="post-body"></textarea>
-        </div>
-        <button type="submit" class="btn">Create Suggestion</button>
-    </form>
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Show Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <label for="post-url">Link from imdb....?</label>
+      <input id="post-url" name="post-url" />
+    </div>
+    <button type="submit" class="btn">Create Suggestion</button>
+  </form>
 </section>
-
 {{#if posts.length}}
 <section>
-    <h2>Your Posts</h2>
-    <ol>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-        </li>
-        {{/each}}
-    </ol>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>
+{{!-- <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div> --}}
+
+{{!-- <div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What show are you think of?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div> --}}
