@@ -3,8 +3,8 @@ const {
 } = require('../models');
 
 const postData = [{
-  title: 'Jaws',
-  post_url: "https://www.imdb.com/title/tt0073195/?ref_=fn_al_tt_1",
+    title: 'Jaws',
+    post_url: "https://www.imdb.com/title/tt0073195/?ref_=fn_al_tt_1",
   },
   {
     title: 'Anaconda',
