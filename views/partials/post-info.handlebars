@@ -8,10 +8,8 @@
     <div class="meta">
       {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
     </div>
-    {{#if loggedIn}}
     <div>
       <button type="button" class="upvote-btn">vote</button>
     </div>
-    {{/if}}
   </div>
 </article>
