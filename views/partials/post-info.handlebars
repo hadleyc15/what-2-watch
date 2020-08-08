@@ -9,7 +9,7 @@
       {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
     </div>
     <div>
-      <button type="button" class="upvote-btn">vote</button>
+      <button type="button" class="upvote-btn" click="upvoteClickHandler($event)">vote</button>
     </div>
   </div>
 </article>
