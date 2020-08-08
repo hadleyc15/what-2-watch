@@ -1,19 +1,24 @@
 const router = require('express').Router();
-const { Post, User, Vote } = require('../../models');
-const sequelize = require('../../config/connection');
+const { Post, User, Vote } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
   Post.findAll({
-    attributes: ['id', 'post_url', 'title', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']]
-    // ,
-    // include: [
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
+    order: [['created_at', 'DESC']],
+    attributes: [
+      'id',
+      'post_url',
+      'title',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -34,19 +39,10 @@ router.get('/:id', (req, res) => {
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ]
-    // ,
-    // include: [
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
   })
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({
-          message: 'No post found with this id'
-        });
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       res.json(dbPostData);
@@ -56,22 +52,6 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-// POST /api/posts
-router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Forrest Gump', post_url: "https://www.imdb.com/title/tt0109830/?ref_=nv_sr_srsg_0"}
-  Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.session.user_id
-  })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
 
 // PUT /api/posts/upvote
 router.put('/upvote', withAuth, (req, res) => {
@@ -87,24 +67,37 @@ router.put('/upvote', withAuth, (req, res) => {
   }
 });
 
-
+router.post('/', withAuth, (req, res) => {
+  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+  Post.create({
+    title: req.body.title,
+    post_url: req.body.post_url,
+    user_id: req.session.user_id
+  })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 router.put('/:id', withAuth, (req, res) => {
-
-  Post.update(req.body, {
-    // individualHooks: true,
-    where: {
-      id: req.params.id
+  Post.update(
+    {
+      title: req.body.title
+    },
+    {
+      where: {
+        id: req.params.id
+      }
     }
-  })
-    .then(dbUserData => {
-      if (!dbUserData[0]) {
-        res.status(404).json({
-          message: 'No movie found with this id'
-        });
+  )
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbUserData);
+      res.json(dbPostData);
     })
     .catch(err => {
       console.log(err);
@@ -118,14 +111,12 @@ router.delete('/:id', withAuth, (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({
-          message: 'No movie found with this id'
-        });
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbUserData);
+      res.json(dbPostData);
     })
     .catch(err => {
       console.log(err);
