@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const withAuth = require('../utils/auth');
 const { Post, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
@@ -46,7 +46,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
-        include: [{
+        include: [
+        {
             model: User,
             attributes: ['username']
         }
