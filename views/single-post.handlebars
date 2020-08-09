@@ -1,3 +1,17 @@
-{{> post-info post}}
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>
+ {{#if loggedIn}}
+  <div>
+    <button type="button" class="upvote-btn">upvote</button>
+  </div>
+</form>
+{{/if}}
 
+{{#if loggedIn}}
 <script src="/javascript/upvote.js"></script>
+{{/if}}
