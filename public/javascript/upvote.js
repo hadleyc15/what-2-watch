@@ -1,16 +1,14 @@
-async function editFormHandler(event) {
+async function upvoteClickHandler(event) {
     event.preventDefault();
-
+    debugger
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
 
-    const title = document.querySelector('input[name="post-title"]').value.trim();
-
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch('/api/posts/upvote', {
         method: 'PUT',
         body: JSON.stringify({
-            title
+            post_id: id
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -18,11 +16,10 @@ async function editFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.reload();
     } else {
         alert(response.statusText);
-    };
-
+    }
 }
 
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);

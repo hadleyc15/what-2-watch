@@ -1,31 +1,34 @@
 <section>
-  <h2>Suggest a Show for the week!</h2>
+  <h2>What Would You Suggest?</h2>
+  <p>Got a good movie suggestion?  Nominate it. Your nomination will be added to the list of nominees for everyone to vote on.  Whichever movie receives the most votes is the one you all watch.</p>
 
   <form class="new-post-form">
     <div>
-      <label for="post-title">Show Title</label>
+      <label for="post-title">Movie Title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
       <label for="post-url">Provide a link from IMDB so others can look up your suggestion!</label>
       <input id="post-url" name="post-url" />
     </div>
-    <button type="submit" class="btn">Create Suggestion</button>
+    <button type="submit" class="btn">Nominate</button>
   </form>
 </section>
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your Nominated Movies</h2>
   <ol>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Nomination</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
+
+<script src="/javascript/add-post.js"></script>
 
 {{!-- <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
