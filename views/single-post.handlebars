@@ -1,14 +1,14 @@
-<ol class="post-list">
+<ol class="list-group">
   {{#each posts as |post|}}
-  <li>
+  <li class="list-group-item list-group-item-info">
     {{> post-info post }}
   </li>
   {{/each}}
 </ol>
- {{#if loggedIn}}
-  <div>
-    <button type="button" class="upvote-btn">upvote</button>
-  </div>
+{{#if loggedIn}}
+<div>
+  <button type="button" class="upvote-btn btn btn-info">Vote</button>
+</div>
 </form>
 {{/if}}
 

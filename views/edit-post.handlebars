@@ -1,18 +1,22 @@
 <article>
-    <a href="/dashboard"> &larr; Back to dashboard</a>
-    <h2>
-        Edit Your Suggestion
-    </h2>
+    <a href="/dashboard"> &larr; Back to dashboard</a></br></br></br>
+    <h2>Edit Your Suggestion</h2>
     <form class="edit-post-form">
-        <div>
-            <label for="post-title">Show Title</label>
-            <input name="post-title" type="text" value="{{post.title}}" />
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label for="post-title">Movie Title</label>
+                <input type="text" class="form-control" id="post-title" value="{{post.title}}"/>
+            </div>
         </div>
-        <div>
-            <input name="post-url" type="text" value="{{post.post_url}}" />
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label for="post-url">IMDb Link</label>
+                <input type="text" class="form-control" id="post-url" value="{{post.post_url}}"/>
+                <small>Adding an IMDb link will allow others to learn more about the movie before making a voting decision.</small>
+            </div>
         </div>
-        <button type="submit">Save Post</button>
-        <button type="button" class="delete-post-btn">Delete Post</button>
+        <button type="submit" class="btn-success btn btn-info">Save</button>
+        <button type="button" class="delete-post-btn btn btn-danger">Delete</button>
     </form>
 </article>
 

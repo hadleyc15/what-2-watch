@@ -1,15 +1,10 @@
-<article class="post">
-  <div class="title">
-    <a href='/post/{{id}}'>{{title}}</a>
-    <span>Suggested by {{user.username}} on {{format_date created_at}}</span>
-    <div>
-      <p>{{ content }}</p>
-    </div>
-    <div class="meta">
-      {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
-    </div>
-    <div>
-      <button type="button" class="upvote-btn" click="upvoteClickHandler($event)">vote</button>
-    </div>
+<div class="card border-info mb-3">
+  <div class="title card-header bg-info border-info text-white">{{vote_count}} {{format_plural "vote" vote_count}}</div>
+  <div class="card-body">
+    <h5 class="card-tile"><a href='/post/{{id}}'>{{title}}</a></h5>
+    <a class="btn" href={{post.post_url}}><i class="fa fa-imdb" style="font-size:50px;color:black"></i></a>
   </div>
-</article>
+  <div class="card-footer bg-transparent border-transparent">
+    <button type="button" class="upvote-btn btn btn-info">Vote</button>
+  </div>
+</div>

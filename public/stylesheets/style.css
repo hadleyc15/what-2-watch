@@ -1,3 +1,100 @@
 /* Styling needed if we use the search bar */
 /* @import url(https://fonts.googleapis.com/css?family=Open+Sans); */
+* {
+    box-sizing: border-box;
+}
+  
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
 
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color .1s;
+    padding: 10px;
+}
+
+a:hover {
+    color: black;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+  
+header h1 {
+    font-size: 2em;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color .1s;
+    padding: 10px;
+}
+
+header a:hover {
+    color: white;
+}
+
+main {
+    flex: 1;
+    padding: 2% 4%;
+}
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 16px;
+}
+
+.btn-no-style:hover {
+    background: none;
+    color: white;
+}
+
+.comment-form {
+    margin-bottom: 5%;
+}
+  
+.comment {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+  
+.comment:nth-child(odd) {
+    background-color: #fff5eb;
+}
+  
+.comment .meta {
+    font-size: 90%;
+    margin-bottom: .5%;
+    opacity: .6;
+}

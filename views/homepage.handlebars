@@ -1,10 +1,18 @@
-<h1>What Would You Like to Watch?</h1>
-<p>Cast a single vote for the movie you would most like to see.  If you don't see one you like, nominate a movie.</p>
-<h2>Nominees</h2>
-<ul class="post-list">
-    {{#each posts as |post|}}
-    <li>
-        {{> post-info post }}
-    </li>
-    {{/each}}
-</ul>
+<section>
+    <h2>What Would You Like to Watch?</h2>
+    <p>Cast a single vote for the movie you would most like to see most.</p>
+    <h2>Nominees</h2>
+    <div id="homepage">
+        <div class="row row-cols-3">
+            <div class="col mb-3 text-center">
+                {{#each posts as |post|}}
+                {{> post-info post }}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{#if loggedIn}}
+    <p>Don't see anything you like?<a href="/dashboard">Nominate a Movie</a></p>
+{{/if}}

@@ -7,49 +7,34 @@
     <title>What 2 Watch</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/style.css"> 
+    <script src="https://kit.fontawesome.com/122672fe47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="container-fluid px-0">
-            <header>
-                <nav>
-                    <div class="row text-center">
-                        <div class="col-2">
-                            <a href="/" class= "pl-3">Nominations</a>
-                        </div>
-                        {{#if loggedIn}}
-                        <div class="col-2">
-                            <a class='pl-3' href="/dashboard">Nominate a Movie</a>
-                        </div>
-                        <div class="col-2">
-                            <button id="logout" class="pl-3">Logout</button>
-                        </div>
-                        {{else}}
-                        <div class="col-2">
-                            <a class='pl-3' href="/login">Login</a>
-                        </div>
-                        {{/if}}
-                    </div>
-                    <div class="row">
-                        <div class="col-4 text-center">
-                        <h1 class='page-header px-3 py-1'>What 2 Watch</h1>
-                        </div>
-                    </div>
-
-                </nav>
-            </header>
-        </div>
+        <header class="p-3 mb-2 bg-info">
+            <h1>
+                <a href="/" class="text-white">What2Watch</a>
+            </h1>
+            <nav>
+                <a href="/" class="text-white">Nominations</a>
+                {{#if loggedIn}}
+                <a href="/dashboard" class="text-white">Nominate a Movie</a>
+                <button id="logout" class="btn-no-style">Logout</button>
+                {{else}}
+                <a href="/login" class="text-white">Login</a>
+                <a href="/signup" class="text-white">Sign up</a>
+                {{/if}}
+            </nav>
+        </header>
         <main>
             {{{ body }}}
         </main>
     </div>
-
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-
 </body>
 
 </html>
