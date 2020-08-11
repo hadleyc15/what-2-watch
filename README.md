@@ -2,7 +2,7 @@
 
 Deployed at Heroku:
 
-<!-- insert Heroku link -->
+https://sleepy-lake-06641.herokuapp.com/
 
 Github Repository:
 
