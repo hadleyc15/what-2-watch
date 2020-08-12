@@ -1,10 +1,5 @@
-<ol class="list-group">
-  {{#each posts as |post|}}
-  <li class="list-group-item list-group-item-info">
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+{{> post-info post }}
+
 {{#if loggedIn}}
 <div>
   <button type="button" class="upvote-btn btn btn-info">Vote</button>
@@ -15,3 +10,4 @@
 {{#if loggedIn}}
 <script src="/javascript/upvote.js"></script>
 {{/if}}
+
