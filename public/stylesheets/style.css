@@ -33,6 +33,7 @@ a:hover {
     flex-direction: column;
 }
 
+
 header {
     border-bottom: 1px solid #ccc;
     display: flex;
@@ -40,7 +41,11 @@ header {
     align-items: center;
     padding: 0 5%;
 }
-  
+
+.my-header {
+    max-width: 100%;
+}
+
 header h1 {
     font-size: 2em;
 }
