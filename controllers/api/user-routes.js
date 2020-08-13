@@ -7,10 +7,32 @@ const {
 const withAuth = require('../../utils/auth');
 const countdown = require('countdown');
 
+// function updateShowTime (date = new Date(2020, 6, 31, 19), day = new Date()) {
+//   console.log(date)
+//   // if we've passed the default date
+//   if (date < day) {
+//     let newDate = date.setDate(date.getDate() + 7)
+//    // change the format of newDate back into the format originally passed into this function
+   
+//     console.log(newDate)
+//     if (newDate < day) {
+//       updateShowTime(newDate)
+//     } else {
+//       return newDate
+//     }
+//   } else {
+//     return date;
+//   } 
+
+// }
 
 // GET http://localhost:3001/api/users/countdown
 router.get('/countdown', (req, res) => {
   let date = new Date(2020, 7, 14, 19);
+  let now = new Date();
+  if (date < now) {
+    date.setDate(date.getDate() + 7);
+  } 
   let timeLeftToVote = countdown(null, date, ~(countdown.SECONDS | countdown.MILLISECONDS)).toString();
 
   function myFunction() {
