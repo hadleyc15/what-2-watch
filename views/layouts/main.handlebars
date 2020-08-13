@@ -29,12 +29,16 @@
             </nav>
         </header>
         <main>
+            <div>
+                <p id="countdown"></p>
+            </div>
             {{{ body }}}
         </main>
     </div>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
+    <script src="/javascript/countdown.js"></script>
 </body>
 
 </html>
