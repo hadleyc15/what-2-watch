@@ -70,11 +70,15 @@ Users must signup or login to participate.
 The movie with the most votes wins!
 
 <!-- insert pics of the program -->
-<img src="./public/images/.png" />
+<img src="/assets/images/Screenshot%20(95).png" />
 <!-- insert pics of the program -->
-<img src="./public/images/.png" />
+<img src="/assets/images/Screenshot%20(96).png" />
 <!-- insert pics of the program -->
-<img src="./public/images/.png" />
+<img src="/assets/images/Screenshot%20(97).png" />
+
+<img src="/assets/images/Screenshot%20(98).png" />
+
+<img src="/assets/images/Screenshot%20(99).png" />
 
 
 ## Installation
