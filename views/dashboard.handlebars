@@ -29,7 +29,7 @@
 <div class="row">
     {{#each posts as |post|}}
     {{> post-info post}}
-    
+    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Nomination</a></br></br></br>
     {{/each}}
 </div>
   </section>
