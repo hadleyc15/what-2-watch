@@ -30,10 +30,9 @@ The group is expected to present the project and convince an audience that it se
 > [GitHub Repository](https://github.com/brandonljackson23/what-2-watch)
 
 ## **CONTRIBUTORS** 
-| Christopher Hadley | Jim Hopkinson | Brandon Jackson |
-| :------: | :------: |  :------: | :------: |
-| <hadleyc15@yahoo.com> | <jim@gmail.com> | <brandonljackson23@gmail.com> |
-| [github](https://github.com/hadleyc15) | [github](https://github.com/1hoppy1) | [github](https://github.com/brandonljackson23) |
+> Christopher Hadley | <hadleyc15@yahoo.com> | [github](https://github.com/hadleyc15)    
+> Jim Hopkinson | <jim@gmail.com> | [github](https://github.com/1hoppy1)  
+> Brandon Jackson | <brandonljackson23@gmail.com> | [github](https://github.com/brandonljackson23)
 
 ## **DEVELOPMENT**
 This application was developed with the following application structures:
