@@ -148,23 +148,23 @@ Group should give a 10-minute presentation on the project, with about 7 minutes 
 ## **FUNCTIONALITY**
 1. When a user visits the site he is presented with the current list of nominated movies for the week along with a timer that countdowns the remaining time to vote on the nominees.
 
-![](/public/images/nominations.PNG)  
+![](/assets/images/nominations.PNG)  
 
 2. To nominate a movie or vote on a current nominee a user must first login. If they have an existing account they can click on the 'Login' link in the navigation pane and then login with their email and password.  
 
-![](/public/images/login.PNG)
+![](/assets/images/login.PNG)
 
 3. If this is the user's first visit, they can sign up for an account by clicking the 'Sign Up' link in the navingation pane and then entering thier username, email and password to create an account.
 
-![](/public/images/sign-up.PNG) 
+![](/assets/images/sign-up.PNG) 
 
 4. As a logged in user, the user can click on the 'Nominate A Movie' link in the navigation pane to make a movie nomination.  To nominate a movie the user must enter the movie title and the link to the IMDb page about the movie.
 
-![](/public/images/nominate-movie.PNG)  
+![](/assets/images/nominate-movie.PNG)  
 
 5. As a logged in user, the user can click on the 'Nominations' link in the navigation pane and then click on a movie title.  The user will be redirected to the individual page for the selected movie where he can click on the IMDb button to visit the IMDb page to read the movie description or watch the movie trailer.  He can also choose to vote for the movie by clicking the 'Vote' button.
 
-![](/public/images/vote.PNG)   
+![](/assets/images/vote.PNG)   
 
 ---
 
