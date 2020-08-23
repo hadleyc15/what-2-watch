@@ -8,7 +8,7 @@ const withAuth = require('../../utils/auth');
 const countdown = require('countdown');
 
 let dateOfNextShowing = "";
-function updateShowTime(date = new Date(2020, 6, 31, 19), day = new Date()) {
+function updateShowTime(date = new Date(2020, 7, 21, 19), day = new Date()) {
   dateOfNextShowing = date;
   console.log(dateOfNextShowing)
   // if we've passed the default date
@@ -32,7 +32,7 @@ updateShowTime();
 let timeLeftToVote = countdown(null, dateOfNextShowing, ~(countdown.SECONDS | countdown.MILLISECONDS)).toString();
 // GET http://localhost:3001/api/users/countdown
 router.get('/countdown', (req, res) => {
-  let date = new Date(2020, 7, 14, 19);
+  let date = new Date(2020, 7, 28, 19);
   let now = new Date();
   if (date < now) {
     date.setDate(date.getDate() + 7);
