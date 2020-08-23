@@ -27,7 +27,7 @@ The group is expected to present the project and convince an audience that it se
 
 ## **APPLICATION LINKS**
 > [Live Application](https://sleepy-lake-06641.herokuapp.com/)  
-> [GitHub Repository](https://github.com/brandonljackson23/what-2-watch)
+> [GitHub Repository](https://github.com/hadleyc15/what-2-watch)
 
 ## **CONTRIBUTORS** 
 > Christopher Hadley | <hadleyc15@yahoo.com> | [github](https://github.com/hadleyc15)    
